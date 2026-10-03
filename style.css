@@ -189,3 +189,106 @@ a{color:inherit;text-decoration:none}
         grid-template-columns: 1fr;
     }
 }
+
+.certificates-page {
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+.certificates-hero {
+    padding-bottom: 80px;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 36px;
+}
+
+.certificate-card {
+    background: linear-gradient(145deg, rgba(14, 42, 72, 0.95), rgba(6, 16, 31, 0.9));
+    border: 1px solid rgba(43, 184, 255, 0.2);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(43, 184, 255, 0.52);
+}
+
+.certificate-image-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 25, 42, 0.85);
+}
+
+.certificate-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.certificate-content {
+    padding: 22px 22px 24px;
+}
+
+.certificate-badge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: rgba(43, 184, 255, 0.12);
+    border: 1px solid rgba(43, 184, 255, 0.4);
+    color: var(--neon);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.certificate-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+}
+
+.certificate-card p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.certificate-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.certificate-meta span {
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #dfeaf7;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.certificate-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+}
