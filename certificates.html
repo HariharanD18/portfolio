@@ -33,13 +33,17 @@
       <div class="section-heading reveal">
         <p class="eyebrow"><span></span> CERTIFICATES</p>
         <h2>Recognition and <span>milestones.</span></h2>
+        <p class="certificate-intro">My certificate documents will be displayed here.</p>
       </div>
 
-      <div class="certificate-grid" id="certificateGallery"></div>
+      <div class="certificate-empty-state reveal">
+        <span class="certificate-empty-icon" aria-hidden="true">✦</span>
+        <h3>Certificate gallery coming soon</h3>
+        <p>The certificate images will be added to this page.</p>
+      </div>
 
       <div class="certificate-actions reveal">
         <a href="index.html#home" class="btn btn-primary">Back to Home <span>↗</span></a>
-        <a href="index.html#projects" class="btn btn-outline">View Projects</a>
       </div>
     </section>
   </main>
@@ -49,53 +53,6 @@
     <div>Designed & built with <span>●</span> and code.</div>
   </footer>
 
-  <script>
-    const certificateData = [
-      { title: 'Indian Talent Olympiad', type: 'Olympiad', year: '2025', description: 'Secured 13th rank in General Knowledge.', image: 'images/certificates/certificate-1.svg' },
-      { title: 'MSME Hackathon 2025', type: 'Hackathon', year: '2025', description: 'Project shortlisted in the MSME Hackathon 2025.', image: 'images/certificates/certificate-2.svg' },
-      { title: 'MSME Hackathon 2026', type: 'Hackathon', year: '2026', description: 'Project shortlisted in the MSME Hackathon 2026.', image: 'images/certificates/certificate-3.svg' },
-      { title: 'Research Publication', type: 'Publication', year: '2025', description: 'Published work in the Indian Journal for Net Zero 2070.', image: 'images/certificates/certificate-4.svg' }
-    ];
-
-    const gallery = document.getElementById('certificateGallery');
-    if (gallery) {
-      gallery.innerHTML = certificateData.map(item => `
-        <article class="certificate-card reveal">
-          <div class="certificate-image-wrap">
-            <img src="${item.image}" alt="${item.title}" class="certificate-image">
-          </div>
-          <div class="certificate-content">
-            <div class="certificate-badge">${item.type}</div>
-            <h3>${item.title}</h3>
-            <p>${item.description}</p>
-            <div class="certificate-meta">
-              <span>${item.year}</span>
-              <span>${item.type}</span>
-            </div>
-          </div>
-        </article>
-      `).join('');
-
-      if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.certificate-card.reveal').forEach((el) => observer.observe(el));
-      } else {
-        document.querySelectorAll('.certificate-card.reveal').forEach((el) => el.classList.add('visible'));
-      }
-    }
-
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
